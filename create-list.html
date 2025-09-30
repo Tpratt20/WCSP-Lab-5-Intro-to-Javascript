@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+</head>
+<body>
+
+    <!-- Established HTML elements -->
+    <p>Enter some text to add to the list</p>
+    <input id="new-text"></input>
+    <button id="add-text">Add</button>
+    <button id="clear">Clear</button>
+
+    <!-- Empty unordered list for use by JavaScript later -->
+    <ul id="list-of-text"></ul>
+
+<script>
+
+    // Finds HTML elements by ID and stores them in variables
+    let textInput = document.querySelector('#new-text')
+    let addButton = document.querySelector('#add-text')
+    let textList = document.querySelector('#list-of-text')
+    let clearButton = document.querySelector('#clear')
+
+    // Tracks number of elements in 'list-of-text' and establishes a maximum
+    let elementsInList = 0
+    let maxElements = 10
+
+    // Allows the user to press enter instead of clicking on 'addButton' element
+    document.addEventListener('keyup', function() {
+        if (event.keyCode == 13) {
+            addButton.click()
+        }
+    })
+
+    // Event listener that uses a callback function to validate input, then add user input to the list
+    addButton.addEventListener('click', function() {
+
+        let newText = textInput.value
+
+        if (newText.length == 0) {
+            alert('Enter some text')
+            return
+        }
+
+        if (elementsInList >= maxElements) {
+            alert('no more elements can be added')
+            return
+        }
+
+        
+        
+        // Each time this function is called, a new variable containing an empty li element is created, then
+        // the contents of the user input is inserted. The new variable is then appended as a child to 'list-of-text'
+        // and the input box is cleared
+        let newListItem = document.createElement('li')
+
+        newListItem.innerHTML = newText
+
+        textList.appendChild(newListItem)
+
+        textInput.value = ''
+
+        elementsInList++
+
+    })
+
+    // Uses a callback function to clear list-of-text and reset it's counter when the clear button is pressed
+    clearButton.addEventListener('click', function() {
+        textList.innerHTML = ''
+        elementsInList = 0
+    })
+
+</script>
+
+</body>
+</html>
