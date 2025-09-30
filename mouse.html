@@ -5,6 +5,7 @@
 </head>
 <body>
 
+
     <p id='mouse-me'>Move your mouse here!</p>
 
 <script>
@@ -13,6 +14,9 @@
 
     let message_count = 0
 
+    // A mousover event listener with a callback function that checks how many times the mouse-me paragraph has been
+    // moused over. It displays the number of times and has conditional 
+    // statements to ensure proper grammar in the message
     message.addEventListener('mouseover', function() {
         if (message_count == 1) {
             message.innerHTML = 'Your mouse has been here ' + message_count + ' time!'

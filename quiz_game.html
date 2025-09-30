@@ -15,11 +15,8 @@
 
 <script>
 
-    // let button = document.querySelector('button')
-    // console.log(button)
-
     let correctAnswerButton = document.querySelector('#correct-answer')
-    // console.log(correctAnswerButton)
+    
 
     let defaultButtonColor = correctAnswerButton.style.background
 
@@ -33,15 +30,7 @@
 
     let wrongAnswerButtons = document.querySelectorAll('.wrong-answer')
 
-    // wrongAnswerButtons.forEach(function(wrongAnswerButton) {
-    //         // console.log(wrongAnswerButton)
-    //         wrongAnswerButton.addEventListener('click', function() {
-
-    //             result.innerHTML = 'Wrong answer, try again?'
-    //             wrongAnswerButton.style.background = 'red'
-    //             correctAnswerButton.style.background = defaultButtonColor
-    //         })
-    // })
+    
 
     for(let x=0 ; x< wrongAnswerButtons.length; x++) {
         let wrongAnswerButton = wrongAnswerButtons[x]
