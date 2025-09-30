@@ -5,6 +5,7 @@
 </head>
 <body>
 
+    <!-- Establishes HTML elements -->
 <p>What is the capital of Wisconsin?</p>
 
 <button class="wrong-answer">Bayfield</button>
@@ -22,16 +23,21 @@
 
     let result = document.querySelector('#result')
 
+
+    // Click event listener that changes the content of the result paragraph if the correct
+    // answer is clicked
     correctAnswerButton.addEventListener('click', function() {
         result.innerHTML = 'Correct answer!'
         correctAnswerButton.style.background = 'cyan'
 
     })
-
+    // Stores all elements with the class wrong-answer as a list in a variable
     let wrongAnswerButtons = document.querySelectorAll('.wrong-answer')
 
     
-
+    // For loop that iterates through the list and stores the current iteration in a variable,
+    // then uses a click event listener to update the result paragraph, change the button
+    // to red, and reset the background color of the correct answer button
     for(let x=0 ; x< wrongAnswerButtons.length; x++) {
         let wrongAnswerButton = wrongAnswerButtons[x]
 

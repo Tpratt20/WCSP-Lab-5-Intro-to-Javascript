@@ -24,6 +24,7 @@
 </head>
 <body>
 
+  <!-- Establishes HTML elements -->
 <h1>Student Club Roster</h1>
 
 <h2>Add Students</h2>
@@ -50,19 +51,24 @@
 
 <script>
 
+    // stores the student-count span in a variable
     let studentCountElement = document.querySelector('#student-count')
-    // console.log(studentCountElement)
-
+    
+    // sets the span contents to 0 using JS
     studentCountElement.innerHTML = 0
 
+    // Assigns HTML elements variables
     let addStudentButton = document.querySelector('#add-student')
 
     let newStudentNameInput = document.querySelector('#student-name')
     let newStudentIdInput = document.querySelector('#student-id')
     let newStudentGpaInput = document.querySelector('#student-gpa')
 
+    // click event listener that uses a callback funtion to store the user input in variables.
+    // Validates fields to ensure proper input.
+
     addStudentButton.addEventListener('click', function() {
-      
+
         let newStudentName = newStudentNameInput.value
 
         let newStudentId = newStudentIdInput.value
@@ -90,10 +96,12 @@
 }
 
 
-        // todo - validation
-        //todo read ID and validate
-        // todo read GPA and validate
-        //todo show alerts if any data not entered or GPA < 0 or > 4
+      // Callback function continues.
+      // Assigns unordered list to a variable.
+      // Creates new variable containing an empty li element, updates that li element with
+      // a string containing user input from all 3 fields, then appens the li element 
+      // as a child of studentListItem.
+      // student-count is then updated with the length of the UL element
         
         let studentListItem = document.querySelector('#student-list')
 
@@ -104,8 +112,7 @@
 
         studentCountElement.innerHTML = studentListItem.children.length
 
-        // todo update the studentCountElement
-        //todo clear input
+        // Clears user input after successfully adding a new li element to the UL
         newStudentNameInput.value = ''
         newStudentIdInput.value = ''
         newStudentGpaInput.value = ''
